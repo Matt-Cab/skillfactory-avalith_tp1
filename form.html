@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/form.css">
+    <script defer src="./js/form.js"></script>
+</head>
+<body>
+    <main class="flex-centered">
+        <form action="">
+            <div class="input-container">
+                <label for="user-name">First Name
+                    <input class="input" type="text" id="user-name" name="userName" required placeholder="Enter your username">
+                </label>
+            </div>
+            <div class="input-container">
+                <label for="email">Email
+                    <input class="input" type="email" id="email" name="email" required placeholder="Enter your email">
+                </label>
+            </div>
+            <div class="input-container">
+                <label for="comments">Comments
+                    <textarea class="input comments-input" name="comments" id="comments" cols="30" rows="10" required placeholder="Enter your comment"></textarea>
+                </label>
+            </div>
+    
+            <button class="submit-btn" type="submit">Send</button>
+        </form>
+    </main>
+</body>
+</html>
