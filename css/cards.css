@@ -1,0 +1,76 @@
+#cards-container {
+    max-width: 95vw;
+    align-content: center;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+
+.card {
+    text-align: center;
+    background-color: #21DA7A;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.card--character-name {
+    color: #182131;
+    font-size: 24px;
+    margin-block: 15px;
+}
+
+.character-status.card--character-info.alive {
+    background-color: rgb(45, 172, 62);
+}
+
+.character-status.card--character-info.unknown {
+    background-color: rgb(207, 192, 52);
+}
+
+.character-status.card--character-info.dead {
+    background-color: rgb(185, 40, 40);
+}
+
+.card--info-container > p {
+    color: #fff;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.card--info-container > p:nth-child(even) {
+    background-color: #008292;
+}
+
+.card--info-container > p:nth-child(odd) {
+    background-color: #00647A;
+}
+
+.card--img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card-btn {
+    margin-block: 30px;
+    font-size: 25px;
+    padding: 10px;
+    line-height: 1;
+    background-color: #00BE91;
+    border-radius: 5px;
+    border: none;
+    transition: opacity .3s;
+    cursor: pointer;
+}
+
+.card-btn:hover {
+    opacity: .85;
+}
+

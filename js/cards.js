@@ -24,12 +24,14 @@ const addCharacterToPage = (character, cardsContainer) => {
 
     characterCard.innerHTML = `
         <img class="card--img" src="${character.image}" alt="${character.name}" loading="lazy">
-        <h3 class="card--character-name">${character.name}</h3>
-        <p class="card--character-info">Status: ${character.status}</p>
-        <p class="card--character-info">Species: ${character.species}</p>
-        <p class="card--character-info">Gender: ${character.gender}</p>
-        <p class="card--character-info">Origin: ${character.origin.name}</p>
-        <p class="card--character-info">Location: ${character.location.name}</p>
+        <div class="card--info-container">
+            <h3 class="card--character-name">${character.name}</h3>
+            <p class="card--character-info character-status ${character.status.toLowerCase()}">Status: ${character.status}</p>
+            <p class="card--character-info">Species: ${character.species}</p>
+            <p class="card--character-info">Gender: ${character.gender}</p>
+            <p class="card--character-info">Origin: ${character.origin.name}</p>
+            <p class="card--character-info">Location: ${character.location.name}</p>
+        </div>
     `;
 
     cardsContainer.appendChild(characterCard);
