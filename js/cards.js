@@ -7,7 +7,7 @@ const fetchCharacters = async (url) => {
         if (response.ok) {
             const characters = await response.json();
 
-            return { status: response.status, characters};
+            return { status: response.status, characters };
         }
         else {
             return { status: response.status };
@@ -44,15 +44,50 @@ const renderCharacters = async (url) => {
     else {
         const cardsContainer = document.querySelector("#cards-container");
 
-        if (data.status !== 200 ) {
+        if (data.status !== 200) {
             console.warn(`There is a problem with the request. Status code: ${data.status}`);
         }
         else {
             const listOfCharacters = data.characters.results;
 
+            sessionStorage.prev = data.characters.info.prev;
+            sessionStorage.next = data.characters.info.next;
+
             listOfCharacters.forEach(character => addCharacterToPage(character, cardsContainer));
         }
     }
 }
+
+const renderPrev = () => {
+    const prev = sessionStorage.prev;
+    const cardsContainer = document.querySelector("#cards-container");
+
+    if (prev === undefined || prev === "null") {
+        console.warn("There is no previous page");
+    }
+    else {
+        cardsContainer.innerHTML = "";
+        renderCharacters(prev);
+    }
+}
+
+const renderNext = () => {
+    const next = sessionStorage.next;
+    const cardsContainer = document.querySelector("#cards-container");
+
+    if (next === undefined || next === "null") {
+        console.warn("There is no next page");
+    }
+    else {
+        cardsContainer.innerHTML = "";
+        renderCharacters(next);
+    }
+};
+
+const btnPrev = document.querySelector("#btn-prev");
+const btnNext = document.querySelector("#btn-next");
+
+btnPrev.addEventListener("click", renderPrev);
+btnNext.addEventListener("click", renderNext);
 
 renderCharacters(URL_GET_CHARACTERS);
