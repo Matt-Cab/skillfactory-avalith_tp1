@@ -23,7 +23,7 @@ const addUserToTable = (user, table) => {
     userRow.innerHTML = `
         <td class="table-users--data">${user.id}</td>
         <td class="table-users--data">${user.name}</td>
-        <td class="table-users--data">${user.name}</td>
+        <td class="table-users--data">${user.email}</td>
         <td class="table-users--data">${user.phone}</td>
         <td class="table-users--data">${user.address.city}</td>
         <td class="table-users--data">${user.company.name}</td>
