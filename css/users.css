@@ -1,0 +1,29 @@
+.table-users {
+    background-color: var(--color-gradient-1);
+    padding: 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.table-users--head {
+    font-size: 18px;
+    height: 40px;
+}
+
+.table-users--row {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.table-users--row:nth-child(even) {
+    background-color: var(--color-gradient-3);
+}
+
+.table-users--row:nth-child(odd) {
+    background-color: var(--color-gradient-2);
+}
+
+.table-users--data {
+    padding: 10px;
+}

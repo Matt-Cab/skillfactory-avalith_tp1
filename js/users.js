@@ -18,14 +18,15 @@ const fetchUsers = async () => {
 
 const addUserToTable = (user, table) => {
     const userRow = document.createElement("tr");
+    userRow.classList = "table-users--row";
 
     userRow.innerHTML = `
-        <td>${user.id}</td>
-        <td>${user.name}</td>
-        <td>${user.name}</td>
-        <td>${user.phone}</td>
-        <td>${user.address.city}</td>
-        <td>${user.company.name}</td>
+        <td class="table-users--data">${user.id}</td>
+        <td class="table-users--data">${user.name}</td>
+        <td class="table-users--data">${user.name}</td>
+        <td class="table-users--data">${user.phone}</td>
+        <td class="table-users--data">${user.address.city}</td>
+        <td class="table-users--data">${user.company.name}</td>
     `;
 
     table.appendChild(userRow);
@@ -38,7 +39,7 @@ const renderUsers = async () =>{
         console.error(data.error);
     }
     else {
-        const tableOfUsers = document.querySelector(".table-users-container");
+        const tableOfUsers = document.querySelector(".table-users--body");
 
         if (data.status === 200) {
             const listOfUsers = data.users;
