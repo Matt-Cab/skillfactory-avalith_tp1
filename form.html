@@ -12,21 +12,21 @@
     <main>
         <form action="">
             <div class="input-container">
-                <label for="user-name">User Name
-                    <input class="input" type="text" id="user-name" name="userName" required pattern="[A-Za-z0-9]{3,20}" placeholder="Enter your username">
+                <label for="user-name">Username
                 </label>
+                <input class="input" type="text" id="user-name" name="userName" required pattern="[A-Za-z0-9]{3,20}" placeholder="Only alphanumerical characters">
             </div>
             <div class="input-container">
                 <label for="email">Email
-                    <input class="input" type="email" id="email" name="email" required placeholder="Enter your email">
                 </label>
+                <input class="input" type="email" id="email" name="email" required placeholder="Enter your email">
             </div>
             <div class="input-container">
                 <label class="label-comments" for="comments">Comments</label>
                 <textarea class="input comments-input" name="comments" id="comments" cols="30" rows="10" required placeholder="Enter your comment"></textarea>
             </div>
     
-            <button class="submit-btn" type="submit">Send</button>
+            <button class="submit-btn custom-btn" type="submit">Send</button>
         </form>
     </main>
 </body>

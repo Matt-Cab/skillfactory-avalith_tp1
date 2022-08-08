@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
 :root {
-    --color-gradient-1: #008292;
-    --color-gradient-2: #00647A;
-    --color-gradient-3: #2F4858;
+    --color-gradient-1: rgb(0, 130, 146);
+    --color-gradient-2: rgb(0, 100, 122);
+    --color-gradient-3: rgb(47, 72, 88);
 }
 
 * {
@@ -13,10 +13,8 @@
 }
 
 body {
-    min-height: 100vh;
-    display: grid;
-    place-content: center;
     background-color: rgb(175, 228, 253);
+    min-height: 100vh;
 }
 
 body,
@@ -24,6 +22,12 @@ input,
 button,
 textarea {
     font-family: 'Oswald', sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center; flex-direction: column;
 }
 
 a {
@@ -34,4 +38,21 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.custom-btn {
+    margin-block: 30px;
+    font-size: 25px;
+    padding: 10px;
+    line-height: 1;
+    background-color: var(--color-gradient-1);
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    transition: opacity .3s;
+    cursor: pointer;
+}
+
+.custom-btn:hover {
+    opacity: .8;
 }
