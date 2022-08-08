@@ -60,36 +60,31 @@ const renderCharacters = async (url) => {
     }
 }
 
-const renderPrev = () => {
-    const prev = sessionStorage.prev;
+const handleBtnClick = event => {
     const cardsContainer = document.querySelector("#cards-container");
+    let newUrl = "";
 
-    if (prev === undefined || prev === "null") {
-        console.warn("There is no previous page");
+    if (event.target.id === "btn-prev") {
+        newUrl = sessionStorage.prev;
+    }
+    else if (event.target.id === "btn-next") {
+        newUrl = sessionStorage.next;
+    }
+
+    if (newUrl === undefined || newUrl === "null" || newUrl === "") {
+        console.warn("Can't keep going.");
     }
     else {
         cardsContainer.innerHTML = "";
-        renderCharacters(prev);
+        renderCharacters(newUrl);
     }
+        
 }
-
-const renderNext = () => {
-    const next = sessionStorage.next;
-    const cardsContainer = document.querySelector("#cards-container");
-
-    if (next === undefined || next === "null") {
-        console.warn("There is no next page");
-    }
-    else {
-        cardsContainer.innerHTML = "";
-        renderCharacters(next);
-    }
-};
 
 const btnPrev = document.querySelector("#btn-prev");
 const btnNext = document.querySelector("#btn-next");
 
-btnPrev.addEventListener("click", renderPrev);
-btnNext.addEventListener("click", renderNext);
+btnPrev.addEventListener("click", handleBtnClick);
+btnNext.addEventListener("click", handleBtnClick);
 
 renderCharacters(URL_GET_CHARACTERS);
