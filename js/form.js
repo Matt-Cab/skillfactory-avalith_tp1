@@ -33,8 +33,8 @@ const styles3 = `
 `;
 
 // console.log() of input values
-form.addEventListener("submit", e => {
-    e.preventDefault();
+form.addEventListener("submit", event => {
+    event.preventDefault();
     
     const userName = form.userName.value;
     const email = form.email.value;
@@ -53,4 +53,3 @@ form.addEventListener("submit", e => {
     }
 
 });    
-
