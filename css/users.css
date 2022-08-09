@@ -1,3 +1,10 @@
+main {
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .table-users {
     background-color: var(--color-gradient-1);
     padding: 10px;
