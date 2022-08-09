@@ -60,6 +60,7 @@ a {
     list-style: none;
     justify-content: center;
     align-items: center;
+    height: 80px;
     margin-bottom: 20px;
     background-color: var(--color-gradient-2);
 }

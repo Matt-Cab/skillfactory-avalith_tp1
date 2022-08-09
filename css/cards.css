@@ -57,20 +57,3 @@
     justify-content: center;
     gap: 20px;
 }
-
-.card-btn {
-    margin-block: 30px;
-    font-size: 25px;
-    padding: 10px;
-    line-height: 1;
-    background-color: #00BE91;
-    border-radius: 5px;
-    border: none;
-    transition: opacity .3s;
-    cursor: pointer;
-}
-
-.card-btn:hover {
-    opacity: .85;
-}
-
