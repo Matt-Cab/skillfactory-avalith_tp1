@@ -5,15 +5,6 @@ main {
     align-items: center;
 }
 
-.index-title {
-    color: #fff;
-    margin-bottom: 55px;
-    background-color: var(--color-gradient-3);
-    padding: 30px;
-    border-radius: 5px;
-    box-shadow: 1px 9px 11px 1px rgba(0, 0, 0, 0.75);
-}
-
 .index-menu {
     list-style: none;
     max-width: 1050px;

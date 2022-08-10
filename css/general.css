@@ -49,6 +49,16 @@ a {
     text-decoration: none;
 }
 
+.main-title {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 55px;
+    background-color: var(--color-gradient-3);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 9px 11px 1px rgba(0, 0, 0, 0.75);
+}
+
 .flex-centered {
     display: flex;
     justify-content: center;
@@ -61,7 +71,7 @@ a {
     justify-content: center;
     align-items: center;
     height: 80px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background-color: var(--color-gradient-2);
 }
 
