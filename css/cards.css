@@ -55,5 +55,33 @@
 .btns {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
+}
+
+.choose-page-container {
+    background-color: var(--color-gradient-3);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.choose-page-container input {
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    width: 75px;
+}
+.choose-page-container input:focus {
+    outline: 2px solid var(--color-gradient-1);
+}
+
+.choose-page-container #btn-go {
+    margin: 0;
 }

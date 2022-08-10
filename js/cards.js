@@ -38,6 +38,8 @@ const addCharacterToPage = (character, cardsContainer) => {
 }
 
 const renderCharacters = async (url) => {
+    inputPageNumber.value = sessionStorage.pageNumber;
+
     const data = await fetchCharacters(url);
 
     if (data.error) {
@@ -52,6 +54,7 @@ const renderCharacters = async (url) => {
         else {
             const listOfCharacters = data.characters.results;
 
+            sessionStorage.numberOfPages = data.characters.info.pages;
             sessionStorage.prev = data.characters.info.prev;
             sessionStorage.next = data.characters.info.next;
 
@@ -63,12 +66,29 @@ const renderCharacters = async (url) => {
 const handleBtnClick = event => {
     const cardsContainer = document.querySelector("#cards-container");
     let newUrl = "";
+    let currentPageNumber = parseInt(sessionStorage.pageNumber);
+    const totalPages = parseInt(sessionStorage.numberOfPages);
 
     if (event.target.id === "btn-prev") {
         newUrl = sessionStorage.prev;
+        if (currentPageNumber - 1 >= 0) {
+            currentPageNumber--;
+        }
     }
     else if (event.target.id === "btn-next") {
         newUrl = sessionStorage.next;
+        if (currentPageNumber + 1 <= totalPages) {
+            currentPageNumber++;
+        }
+    }
+    else if (event.target.id === "btn-go") {
+        currentPageNumber = parseInt(inputPageNumber.value);
+
+        if ((currentPageNumber >= 1) && (currentPageNumber <= totalPages)) {
+            newUrl = `${URL_GET_CHARACTERS}?page=${currentPageNumber}`;
+        } else {
+            console.warn("Out of allowed range.");
+        }
     }
 
     if (newUrl === undefined || newUrl === "null" || newUrl === "") {
@@ -76,6 +96,7 @@ const handleBtnClick = event => {
     }
     else {
         cardsContainer.innerHTML = "";
+        sessionStorage.pageNumber = currentPageNumber;
         renderCharacters(newUrl);
     }
         
@@ -83,8 +104,17 @@ const handleBtnClick = event => {
 
 const btnPrev = document.querySelector("#btn-prev");
 const btnNext = document.querySelector("#btn-next");
+const btnGoToPage = document.querySelector("#btn-go");
+const inputPageNumber = document.querySelector("#page-number");
 
 btnPrev.addEventListener("click", handleBtnClick);
 btnNext.addEventListener("click", handleBtnClick);
+btnGoToPage.addEventListener("click", handleBtnClick);
 
-renderCharacters(URL_GET_CHARACTERS);
+if (sessionStorage.pageNumber === undefined) {
+    sessionStorage.pageNumber = 1;
+    renderCharacters(URL_GET_CHARACTERS);
+} else {
+    const currentUrl = `${URL_GET_CHARACTERS}?page=${sessionStorage.pageNumber}`;
+    renderCharacters(currentUrl);
+}
