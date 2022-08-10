@@ -1,8 +1,14 @@
 main {
-    height: calc(100vh - 80px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: calc(100vh - 90px);
+    display: grid;
+    place-content: center;
+    /* justify-items: center; */
+}
+
+
+.main-title {
+    width: 200px;
+    margin-inline: auto;
 }
 
 .table-users {
@@ -10,6 +16,10 @@ main {
     padding: 10px;
     color: #fff;
     border-radius: 5px;
+}
+
+.table-container {
+    overflow-x: auto;
 }
 
 .table-users--head {
