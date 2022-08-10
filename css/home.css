@@ -7,7 +7,7 @@ main {
 
 .index-title {
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 55px;
 }
 
 .index-menu {
@@ -27,14 +27,17 @@ main {
 }
 
 .menu-link {
-    background-color: var(--color-gradient-1);
+    background-color: var(--color-gradient-2);
     border-radius: 5px;
     padding: 20px;
-    transition: opacity .3s;
+    box-shadow: 1px 9px 11px 1px rgba(0, 0, 0, 0.75);
+    opacity: .85;
+    transition: opacity .3s, transform .3s;
 }
 
 .menu-link:hover {
-    opacity: .85;
+    opacity: 1;
+    transform: scale(1.2);
 }
 
 .menu-img {
