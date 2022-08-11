@@ -85,3 +85,7 @@
 .choose-page-container #btn-go {
     margin: 0;
 }
+
+.btn-disabled {
+    display: none;
+}

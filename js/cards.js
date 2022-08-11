@@ -58,6 +58,18 @@ const renderCharacters = async (url) => {
             sessionStorage.prev = data.characters.info.prev;
             sessionStorage.next = data.characters.info.next;
 
+            if ( sessionStorage.prev === "null" ) {
+                btnPrev.classList.add("btn-disabled");
+            } else {
+                btnPrev.classList.remove("btn-disabled");
+            }
+
+            if ( sessionStorage.next === "null" ) {
+                btnNext.classList.add("btn-disabled");
+            } else {
+                btnNext.classList.remove("btn-disabled");
+            }
+
             listOfCharacters.forEach(character => addCharacterToPage(character, cardsContainer));
         }
     }
