@@ -13,10 +13,17 @@
     border-radius: 5px;
 }
 
+.card:nth-child(odd) {
+    background-color: var(--color-gradient-2);
+}
+
 .card--character-name {
     color: #182131;
     font-size: 24px;
     margin-block: 15px;
+}
+.card:nth-child(odd) .card--character-name {
+    color: #fff;
 }
 
 .character-status.card--character-info.alive {
@@ -37,6 +44,8 @@
     padding: 5px;
     border-radius: 5px;
     font-size: 20px;
+    outline: 1px solid #fff;
+    outline-offset: -1px;
 }
 
 .card--info-container > p:nth-child(even) {
